@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'abouts/' =>'about#index'
+  get 'about/' =>'about#index'
 
   get 'welcome/index'
 
