@@ -35,6 +35,9 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
+  <% flash.each do |key, value|%>
+    <%= content_tag :div , value , class: "col-md-4 col-md-offset-4 alert alert-#{key}" %>
+  <%end%>
   <%= yield %>
 </div>
 
