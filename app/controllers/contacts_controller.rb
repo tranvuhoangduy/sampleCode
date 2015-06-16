@@ -11,6 +11,13 @@ class ContactsController < ApplicationController
 
 	def create
 		@contact = Contact.new(contact_params)
+
+		name = params[:contact][:name]
+		email = paramsp[:contact][:email]
+		body = paramsp[:contact][:body]
+
+		ContactMailer.contact_email(name,email,body).deliver
+		
 		if @contact.save
 			flash[:success] = "Message sent"
 			flash[:info] = "Message has not been sent"
