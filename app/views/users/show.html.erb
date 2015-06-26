@@ -1,0 +1,11 @@
+
+<%= @user.profile.first_name %> <%= @user.profile.last_name %>
+<%= @user.profile.job_title %> <br/>
+
+<%  if current_user.plan_id == 3 %>
+		<%= @user.profile.phone_number %> <br/>
+		<%= @user.profile.contact_email %> <br/>
+<% else %>
+	<%= redirect_to(root_url) %>
+<% end %>
+<%= @user.profile.description %> <br/>

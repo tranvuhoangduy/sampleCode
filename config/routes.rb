@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users , controllers: {registrations: 'users/registrations'}
   resources :contacts
   
+  resources :users do
+    resource :profile
+  end
   get 'about/' =>'about#index'
 
   get 'welcome/index'
