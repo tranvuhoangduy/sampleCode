@@ -7,7 +7,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 				resource.plan_id = params[:plan]
 				if resource.plan_id == '5' || resource.plan_id == "2"
 					resource.save_with_payment
-					redirect_to root_url
 
 				else
 					resource.save

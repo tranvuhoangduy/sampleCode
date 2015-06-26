@@ -13,6 +13,8 @@ attr_accessor :stripe_card_token
   		customer = Stripe::Customer.create(description: email , plan: plan_id, card: stripe_card_token)
   		self.stripe_customer_token = customer.id
   		save!
+      redirect_to root_url
+
   	end
   end
 end
