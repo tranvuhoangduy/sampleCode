@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 	def index
-		@basic_plan = Plan.find(1)
-		@pro_plan = Plan.find(2)
+		@basic_plan = Plan.find_by_name('basic')
+		@pro_plan = Plan.find_by_name('pro')
 	end
 end
