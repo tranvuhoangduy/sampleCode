@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :contacts
   
   resources :users do
-    resources :profiles
+    resource :profile
   end
   get 'about/' =>'about#index'
 
